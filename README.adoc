@@ -1,26 +1,18 @@
-= HTTP server with fixed response
+# HTTP server with fixed response
 
 This is a tiny HTTP server that responds to all requests
 with the same response.
 
-== Usage
+## Usage
 
 Following example serves a "Not Found" page.
 
-[source,shell]
-----
-fixed-response -content 404.html -type text/html
-----
+    fixed-response -content 404.html -type text/html
 
 Use `-h` option to list all options.
 
-== Container Usage
+## Container Usage
 
-[source,Dockerfile]
-----
-FROM vmj0/fixed-response:0.9
-
-COPY ./404.html ./
-
-CMD ["/fixed-response", "-content", "/404.html", "-type", "text/html"]
-----
+    FROM vmj0/fixed-response:0.9
+    COPY ./404.html ./
+    CMD ["/fixed-response", "-content", "/404.html", "-type", "text/html"]
